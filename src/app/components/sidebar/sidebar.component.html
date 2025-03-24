@@ -1,0 +1,24 @@
+<div class="sidebar">
+    <div class="sidebar-header">
+      <h1>Notes App</h1>
+      <button (click)="createNewNote()" class="new-note-btn">
+        <i class="fa fa-plus"></i> New
+      </button>
+    </div>
+    
+    <div class="sidebar-search">
+      <input type="text" placeholder="Search notes..." />
+    </div>
+    
+    <div class="sidebar-notes">
+      <div 
+        *ngFor="let note of notes" 
+        class="sidebar-note-item"
+        [class.active]="selectedNote?.id === note.id"
+        (click)="selectNote(note)">
+        <div class="note-title">{{ note.title }}</div>
+        <div class="note-preview">{{ note.content | slice:0:50 }}</div>
+        <div class="note-date">{{ note.updatedAt | date:'short' }}</div>
+      </div>
+    </div>
+  </div>

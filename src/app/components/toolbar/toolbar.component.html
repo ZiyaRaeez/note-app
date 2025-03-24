@@ -1,0 +1,34 @@
+<div class="toolbar">
+    <div class="toolbar-left">
+      <button class="toolbar-btn" title="Bold" (click)="formatText('bold')">B</button>
+      <button class="toolbar-btn" title="Italic" (click)="formatText('italic')">I</button>
+      <button class="toolbar-btn" title="Underline" (click)="formatText('underline')">U</button>
+      <span class="separator">|</span>
+      <button class="toolbar-btn" title="Heading 1" (click)="formatText('h1')">H1</button>
+      <button class="toolbar-btn" title="Heading 2" (click)="formatText('h2')">H2</button>
+      <button class="toolbar-btn" title="Heading 3" (click)="formatText('h3')">H3</button>
+      <span class="separator">|</span>
+      <button class="toolbar-btn" title="List" (click)="formatText('list')">
+        <i class="fa fa-list"></i>
+      </button>
+      <button class="toolbar-btn" title="Numbered List" (click)="formatText('numbered-list')">
+        <i class="fa fa-list-ol"></i>
+      </button>
+      <span class="separator">|</span>
+      <button class="toolbar-btn" title="Code" (click)="formatText('code')">
+        <i class="fa fa-code"></i>
+      </button>
+      <button class="toolbar-btn" title="Link" (click)="formatText('link')">
+        <i class="fa fa-link"></i>
+      </button>
+    </div>
+    
+    <div class="toolbar-right">
+      <button class="toolbar-btn" title="Delete" *ngIf="selectedNote" (click)="deleteNote()">
+        <i class="fa fa-trash"></i>
+      </button>
+      <button class="toolbar-btn" title="Share">
+        <i class="fa fa-share-alt"></i>
+      </button>
+    </div>
+  </div>

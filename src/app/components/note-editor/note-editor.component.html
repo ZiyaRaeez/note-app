@@ -1,0 +1,27 @@
+<div class="editor" *ngIf="selectedNote; else noNoteSelected">
+    <div class="editor-title">
+      <input 
+        type="text" 
+        [(ngModel)]="editedTitle" 
+        (blur)="onTitleChange()"
+        placeholder="Note title" />
+    </div>
+    
+    <div class="editor-content">
+      <textarea 
+        [(ngModel)]="editedContent" 
+        (blur)="onContentChange()"
+        placeholder="Start writing here..."></textarea>
+    </div>
+  </div>
+  
+  <ng-template #noNoteSelected>
+    <div class="no-note-selected">
+      <div class="empty-state">
+        <i class="fa fa-file-text-o empty-icon"></i>
+        <h2>No Note Selected</h2>
+        <p>Select a note from the sidebar or create a new one.</p>
+      </div>
+    </div>
+  </ng-template>
+  

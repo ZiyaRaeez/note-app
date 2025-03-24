@@ -1,0 +1,18 @@
+<div class="page-container">
+    <app-sidebar *ngIf="isSidebarVisible"></app-sidebar>
+    <app-note-list *ngIf="isNoteListVisible"></app-note-list>
+    
+    <div class="editor-container">
+      <div class="editor-header">
+        <button (click)="toggleSidebar()" class="toggle-btn">
+          <i class="fa" [ngClass]="isSidebarVisible ? 'fa-chevron-left' : 'fa-chevron-right'"></i>
+        </button>
+        <button (click)="toggleNoteList()" class="toggle-btn">
+          <i class="fa" [ngClass]="isNoteListVisible ? 'fa-chevron-left' : 'fa-chevron-right'"></i>
+        </button>
+        <app-toolbar></app-toolbar>
+      </div>
+      <app-note-editor></app-note-editor>
+    </div>
+  </div>
+  

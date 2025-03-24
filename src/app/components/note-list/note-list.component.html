@@ -1,0 +1,26 @@
+<div class="note-list">
+    <div class="note-list-header">
+      <h2>All Notes</h2>
+      <div class="view-options">
+        <button class="view-btn active">List</button>
+        <button class="view-btn">Grid</button>
+      </div>
+    </div>
+    
+    <div class="note-items">
+      <div 
+        *ngFor="let note of notes" 
+        class="note-item"
+        [class.active]="selectedNote?.id === note.id"
+        (click)="selectNote(note)">
+        <div class="note-item-title">{{ note.title }}</div>
+        <div class="note-item-preview">{{ note.content | slice:0:100 }}</div>
+        <div class="note-item-meta">
+          <span>{{ note.updatedAt | date:'medium' }}</span>
+          <span *ngIf="note.tags && note.tags.length">
+            Tags: {{ note.tags.join(', ') }}
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
